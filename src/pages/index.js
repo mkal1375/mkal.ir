@@ -15,7 +15,7 @@ const IndexPage = ({ data }) => (
             alt="مهدی کلهر"
           />
         </div>
-        <div style={{ alignSelf: "end" }}>
+        <div className="information_me">
           <h1 className="information__title">مهدی کلهر</h1>
           <h2 className="information__subtitle">علاقه‌مند نرم‌افزار</h2>
         </div>
@@ -41,6 +41,7 @@ const IndexPage = ({ data }) => (
               <a
                 className="link"
                 target="_blank"
+                rel="noopener noreferrer"
                 href="https://virgool.io/@mkal1375"
               >
                 وبلاگ

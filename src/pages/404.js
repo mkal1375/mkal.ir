@@ -9,7 +9,10 @@ const NotFoundPage = () => (
     <h1>گم شدی؟</h1>
     <h2>
       <Link to="/" className="link">
-        آره...برگردون منو خونه  😕
+        آره...برگردون منو خونه{" "}
+        <span role="img" aria-label="sad face">
+          😕
+        </span>
       </Link>
     </h2>
   </Container>

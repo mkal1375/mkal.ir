@@ -6,3 +6,6 @@
 
 // You can delete this file if you're not using it
 import "./src/assets/style.css"
+import "./src/assets/prism-a11y-dark.css"
+import "./src/assets/prism-style.css"
+import "prismjs/plugins/line-numbers/prism-line-numbers.css"

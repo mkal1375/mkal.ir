@@ -3,10 +3,25 @@
   src: url("./fonts/Sahel-VF.woff2") format("woff2"),
     url("./fonts/Sahel-VF.ttf") format("truetype");
 }
+@font-face {
+  font-family: "JM";
+  src: url("./fonts/JetBrainsMono-Regular.ttf") format("truetype");
+}
+
 :root {
   --black: #333333;
+  --dark-gray: #555;
   --gray: #959595;
+  --white: #ffffff;
+  --backColor: var(--white);
+  --primary: var(--black);
+  --secondary: var(--gray);
 }
+/* html[data-theme="dark"] {
+  --primary: var(--white);
+  --backColor: var(--dark-gray);
+} */
+
 *,
 *:before,
 *:after {
@@ -14,13 +29,49 @@
   font-family: "Sahel VF" !important;
 }
 
+/* override some prism.js style */
+.language-text,
+.gatsby-highlight *,
+.gatsby-highlight *:before,
+.gatsby-highlight *:after {
+  direction: ltr;
+  font-size: 0.9rem !important;
+  font-family: "JM", "Sahel VF" !important;
+}
+
 *::selection {
-  background-color: var(--black) !important;
+  background-color: var(--primary) !important;
   color: white !important;
 }
 
 html {
   direction: rtl;
+  background-color: var(--backColor);
+}
+
+h1 {
+  font-variation-settings: "wght" 900;
+  color: var(--primary);
+}
+
+h2 {
+  font-variation-settings: "wght" 700;
+  color: var(--primary);
+}
+
+/* Helper Classes */
+
+.link {
+  text-decoration: none;
+  color: var(--secondary);
+}
+
+.link:hover {
+  color: var(--primary);
+}
+
+.link:active {
+  color: inherit;
 }
 
 .color-black {
@@ -29,36 +80,10 @@ html {
 .color-gray {
   color: var(--gray);
 }
-
 .container {
   max-width: 1200px;
   padding: 0 2rem;
   margin: 0 auto;
-}
-
-h1 {
-  font-variation-settings: "wght" 900;
-  color: var(--black);
-}
-
-h2 {
-  font-variation-settings: "wght" 700;
-  color: var(--black);
-}
-
-/* Helper Classes */
-
-.link {
-  text-decoration: none;
-  color: var(--gray);
-}
-
-.link:hover {
-  color: var(--black);
-}
-
-.link:active {
-  color: inherit;
 }
 
 /* IndexPage */
@@ -69,6 +94,9 @@ h2 {
   display: grid;
   grid-template-columns: 200px auto;
   column-gap: 3rem;
+}
+.information_me {
+  align-self: end;
 }
 .information__title {
   margin: 0;
@@ -103,5 +131,23 @@ h2 {
   }
   .container {
     padding: 0;
+  }
+  .information__image {
+    width: 150px;
+  }
+  .information__title {
+    font-size: 3rem;
+  }
+  .information__subtitle {
+    font-size: 2rem;
+  }
+  .navigation {
+    font-size: 1.3rem;
+  }
+  .information_me {
+    text-align: center;
+  }
+  .index-page {
+    margin-top: 2rem;
   }
 }
