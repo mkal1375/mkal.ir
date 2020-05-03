@@ -13,25 +13,18 @@ export default function BlogPost({ data }) {
       <SEO
         title={post.frontmatter.title}
         description={post.frontmatter.description}
+        keywords={post.frontmatter.keywords}
       />
       <div>
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "space-between",
-            alignItems: "center",
-          }}
-        >
+        <div className="post__header">
           <h1>{post.frontmatter.title}</h1>
-          <div>
-            <div className="color-gray" style={{ display: "flex" }}>
-              <div>{date}</div>
-              <Link to="/til" className="link" style={{ marginRight: "1rem" }}>
-                <span role="img" aria-label="back">
-                  🔙
-                </span>
-              </Link>
-            </div>
+          <div className="post__header_actions">
+            <div>{date}</div>
+            <Link to="/til" className="link" style={{ marginRight: "1rem" }}>
+              <span role="img" aria-label="back">
+                🔙
+              </span>
+            </Link>
           </div>
         </div>
         <div dangerouslySetInnerHTML={{ __html: post.html }} />

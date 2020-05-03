@@ -119,6 +119,30 @@ h2 {
   font-size: 1.5rem;
 }
 
+/* TIL Page */
+.til__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.til__post {
+  display: flex;
+}
+.til__post__divider {
+  margin: 0 1rem;
+}
+
+/* Post Page */
+.post__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.post__header_actions {
+  display: flex;
+  color: var(--gray);
+}
+
 @media screen and (max-width: 640px) {
   .information {
     grid-template-columns: 1fr;
@@ -130,7 +154,7 @@ h2 {
     text-align: center;
   }
   .container {
-    padding: 0;
+    padding: 0 1rem;
   }
   .information__image {
     width: 150px;
@@ -149,5 +173,33 @@ h2 {
   }
   .index-page {
     margin-top: 2rem;
+  }
+  h1 {
+    font-size: 1.5rem;
+  }
+  h2 {
+    font-size: 1.3rem;
+  }
+  .til__header {
+    flex-direction: column;
+  }
+  .til__description {
+    text-align: center;
+  }
+  .til__post {
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+  .til__post__divider {
+    display: none;
+  }
+  .post__header {
+    flex-direction: column;
+  }
+  .post__header_actions {
+    width: 100%;
+    justify-content: space-between;
+    /* flex-direction: column; */
   }
 }
