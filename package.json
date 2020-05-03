@@ -31,6 +31,7 @@
   "scripts": {
     "buildAndUpload": "GATSBY_EXPERIMENTAL_PAGE_BUILD_ON_DATA_CHANGES=true gatsby build --log-pages && surge public/",
     "addTIL": "git add . && git commit -m 'add a new til post' && git push && GATSBY_EXPERIMENTAL_PAGE_BUILD_ON_DATA_CHANGES=true gatsby build --log-pages && surge public/",
+    "updateTIL": "git add . && git commit -m 'update a til post' && git push && GATSBY_EXPERIMENTAL_PAGE_BUILD_ON_DATA_CHANGES=true gatsby build --log-pages && surge public/",
     "build": "gatsby build",
     "develop": "gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
