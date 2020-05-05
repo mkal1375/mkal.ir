@@ -5,6 +5,7 @@ module.exports = {
     author: `مهدی کلهر`,
   },
   plugins: [
+    `gatsby-plugin-sass`,
     {
       resolve: `gatsby-transformer-remark`,
       options: {

@@ -27,7 +27,10 @@ export default function BlogPost({ data }) {
             </Link>
           </div>
         </div>
-        <div dangerouslySetInnerHTML={{ __html: post.html }} />
+        <div
+          className="markdown-HTML"
+          dangerouslySetInnerHTML={{ __html: post.html }}
+        />
       </div>
     </Container>
   )

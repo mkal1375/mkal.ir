@@ -4,8 +4,24 @@
     url("./fonts/Sahel-VF.ttf") format("truetype");
 }
 @font-face {
-  font-family: "JM";
+  font-family: "JB";
+  font-weight: 300;
   src: url("./fonts/JetBrainsMono-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "JB";
+  font-weight: 500;
+  src: url("./fonts/JetBrainsMono-Medium.ttf") format("truetype");
+}
+@font-face {
+  font-family: "JB";
+  font-weight: 600;
+  src: url("./fonts/JetBrainsMono-Bold.ttf") format("truetype");
+}
+@font-face {
+  font-family: "JB";
+  font-weight: 900;
+  src: url("./fonts/JetBrainsMono-ExtraBold.ttf") format("truetype");
 }
 
 :root {
@@ -16,17 +32,17 @@
   --backColor: var(--white);
   --primary: var(--black);
   --secondary: var(--gray);
+  --accent: #bada55;
 }
-/* html[data-theme="dark"] {
-  --primary: var(--white);
-  --backColor: var(--dark-gray);
-} */
+// html[data-theme="dark"] {
+//   --primary: var(--white);
+//   --backColor: var(--dark-gray);
+// }
 
 *,
 *:before,
 *:after {
   box-sizing: border-box;
-  font-family: "Sahel VF" !important;
 }
 
 /* override some prism.js style */
@@ -36,7 +52,7 @@
 .gatsby-highlight *:after {
   direction: ltr;
   font-size: 0.9rem !important;
-  font-family: "JM", "Sahel VF" !important;
+  font-family: JB, "Sahel VF" !important;
 }
 
 *::selection {
@@ -47,6 +63,7 @@
 html {
   direction: rtl;
   background-color: var(--backColor);
+  font-family: "Sahel VF";
 }
 
 h1 {
@@ -59,21 +76,27 @@ h2 {
   color: var(--primary);
 }
 
-/* Helper Classes */
+/* Helper Classes And Mixin */
+.english {
+  font-family: JB;
+  direction: ltr;
+}
 
-.link {
+@mixin link {
   text-decoration: none;
   color: var(--secondary);
+  text-decoration: underline;
+  &:hover {
+    color: var(--primary);
+  }
+  &:active {
+    color: inherit;
+  }
 }
 
-.link:hover {
-  color: var(--primary);
+.link {
+  @include link;
 }
-
-.link:active {
-  color: inherit;
-}
-
 .color-black {
   color: var(--black);
 }
@@ -201,5 +224,72 @@ h2 {
     width: 100%;
     justify-content: space-between;
     /* flex-direction: column; */
+  }
+}
+
+.markdown-HTML {
+  @mixin headerBefore($sign) {
+    &:before {
+      content: $sign;
+      color: var(--secondary);
+      margin-right: 0.5rem;
+    }
+  }
+
+  h1 {
+    @include headerBefore("#");
+  }
+  h2 {
+    @include headerBefore("##");
+  }
+  h3 {
+    @include headerBefore("###");
+  }
+  h4 {
+    @include headerBefore("####");
+  }
+  h5 {
+    @include headerBefore("#####");
+  }
+  h6 {
+    @include headerBefore("######");
+  }
+  table {
+    border-collapse: collapse;
+    td {
+      border: 1px solid var(--secondary);
+      padding: 0.5rem;
+    }
+    th {
+      border: 1px solid var(--primary);
+      background-color: var(--primary);
+      padding: 0.5rem;
+      color: white;
+    }
+  }
+  a {
+    @include link;
+  }
+  blockquote {
+    // border-left: 10px solid var(--secondary);
+    border: 1px solid var(--secondary);
+    padding: 0 0.5rem;
+    position: relative;
+    border-radius: 2px;
+    &:before {
+      position: absolute;
+      content: "❞";
+      font-size: 3rem;
+      color: var(--secondary);
+      top: -17px;
+    }
+  }
+  del {
+    text-decoration-style: dashed;
+    text-decoration-color: var(--secondary);
+    color: var(--secondary);
+  }
+  em {
+    color: var(--secondary);
   }
 }
