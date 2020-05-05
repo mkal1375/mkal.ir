@@ -85,7 +85,6 @@ h2 {
 @mixin link {
   text-decoration: none;
   color: var(--secondary);
-  text-decoration: underline;
   &:hover {
     color: var(--primary);
   }
@@ -97,6 +96,7 @@ h2 {
 .link {
   @include link;
 }
+
 .color-black {
   color: var(--black);
 }
@@ -255,6 +255,9 @@ h2 {
     @include headerBefore("######");
   }
   table {
+    .language-text {
+      white-space: nowrap;
+    }
     border-collapse: collapse;
     td {
       border: 1px solid var(--secondary);
@@ -269,6 +272,7 @@ h2 {
   }
   a {
     @include link;
+    text-decoration: underline;
   }
   blockquote {
     // border-left: 10px solid var(--secondary);
